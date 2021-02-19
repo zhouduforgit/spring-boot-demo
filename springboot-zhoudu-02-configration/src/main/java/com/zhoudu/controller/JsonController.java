@@ -1,8 +1,10 @@
 package com.zhoudu.controller;
 
 import com.zhoudu.bean.Food;
+import com.zhoudu.bean.Fruit;
 import com.zhoudu.bean.Vegetable;
 import com.zhoudu.config.FoodConfig;
+import com.zhoudu.config.FruitConfig;
 import com.zhoudu.config.VegetableConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,8 +21,8 @@ public class JsonController {
     private String  rice;
 
     @Value("${food.meat}")
-    private String meat;*/
-    /*@Autowired
+    private String meat;
+    @Autowired
     FoodConfig foodConfig;
 
     @RequestMapping("/json")
@@ -29,16 +31,26 @@ public class JsonController {
         food.setMeat(foodConfig.getMeat());
         food.setRice(foodConfig.getRice());
         return food;
-    }
-*/
+    }*/
     @Autowired
     private VegetableConfig vegetableConfig;
     @RequestMapping("/vegetable")
-    public Vegetable json(){
+    public Vegetable vegetable(){
         Vegetable vegetable=new Vegetable();
         vegetable.setEggplant(vegetableConfig.getEggplant());
         vegetable.setGreenpeper(vegetableConfig.getGreenpeper());
         vegetable.setPotato(vegetableConfig.getPotato());
         return vegetable;
+    }
+
+    @Autowired
+    private FruitConfig fruitConfig;
+    @RequestMapping("/fruit")
+    public Fruit fruit(){
+        Fruit fruit=new Fruit();
+        fruit.setApple(fruitConfig.getApple());
+        fruit.setGrape(fruitConfig.getGrape());
+        fruit.setPlum(fruitConfig.getPlum());
+        return fruit;
     }
 }
