@@ -1,5 +1,6 @@
 package com.zhoudu.config;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -15,36 +16,12 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @ConfigurationProperties(prefix = "vegetable")
 @PropertySource("classpath:vegetable.properties")
-
+@Data
 public class VegetableConfig {
 
         private String potato;
         private String eggplant;
         private String greenpeper;
-
-        public String getPotato() {
-            return potato;
-        }
-
-        public void setPotato(String potato) {
-            this.potato = potato;
-        }
-
-        public String getEggplant() {
-            return eggplant;
-        }
-
-        public void setEggplant(String eggplant) {
-            this.eggplant = eggplant;
-        }
-
-        public String getGreenpeper() {
-            return greenpeper;
-        }
-
-        public void setGreenpeper(String greenpeper) {
-            this.greenpeper = greenpeper;
-        }
 }
 
 

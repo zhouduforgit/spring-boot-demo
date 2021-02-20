@@ -4,6 +4,16 @@
       "name": "food",
       "type": "com.zhoudu.config.FoodConfig",
       "sourceType": "com.zhoudu.config.FoodConfig"
+    },
+    {
+      "name": "fruit",
+      "type": "com.zhoudu.config.FruitConfig",
+      "sourceType": "com.zhoudu.config.FruitConfig"
+    },
+    {
+      "name": "vegetable",
+      "type": "com.zhoudu.config.VegetableConfig",
+      "sourceType": "com.zhoudu.config.VegetableConfig"
     }
   ],
   "properties": [
@@ -16,6 +26,36 @@
       "name": "food.rice",
       "type": "java.lang.String",
       "sourceType": "com.zhoudu.config.FoodConfig"
+    },
+    {
+      "name": "fruit.apple",
+      "type": "java.lang.String",
+      "sourceType": "com.zhoudu.config.FruitConfig"
+    },
+    {
+      "name": "fruit.grape",
+      "type": "java.lang.String",
+      "sourceType": "com.zhoudu.config.FruitConfig"
+    },
+    {
+      "name": "fruit.plum",
+      "type": "java.lang.String",
+      "sourceType": "com.zhoudu.config.FruitConfig"
+    },
+    {
+      "name": "vegetable.eggplant",
+      "type": "java.lang.String",
+      "sourceType": "com.zhoudu.config.VegetableConfig"
+    },
+    {
+      "name": "vegetable.greenpeper",
+      "type": "java.lang.String",
+      "sourceType": "com.zhoudu.config.VegetableConfig"
+    },
+    {
+      "name": "vegetable.potato",
+      "type": "java.lang.String",
+      "sourceType": "com.zhoudu.config.VegetableConfig"
     }
   ],
   "hints": []
