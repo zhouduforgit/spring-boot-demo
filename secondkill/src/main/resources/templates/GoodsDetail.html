@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <script type="text/javascript" th:src="@{/js/jquery-3.6.0.min.js}"></script>
+</head>
+<body class="container">
+    <h1>商品详情</h1>
+    <br><br>
+    <div class="with:80%">
+        <table class="table table-hover">
+            <tr>
+                <td>商品名称</td>
+                <td colspan="3" th:text="${detailVo.name}">name</td>
+            </tr>
+            <tr>
+                <td>商品图片</td>
+                <td colspan="3">
+                    <img th:src="@{${detailVo.imgPath}}" width="200" height="200">
+                </td>
+            </tr>
+            <tr>
+                <td>秒杀开始时间</td>
+                <td colspan="3"  th:text="${#dates.format(detailVo.startTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+                <td id="seckillTip">
+                    <input type="hidden" id="remainSeconds" th:value="${remainSeconds}">
+                    <input type="hidden" id="status" th:value="${status}">
+                    <span th:if="${status eq 0}">秒杀倒计时：
+                        <span id="countDown" th:text="${remainSeconds}"></span>秒
+                    </span>
+                    <span th:if="${status eq 1}">秒杀进行中</span>
+                    <span th:if="${status eq 2}">秒杀已结束</span>
+                </td>
+                <td>
+                    <form id="seckillForm" method="post" action="/toSeckill/goodsId">
+                        <input type="hidden" name="goodsId" th:value="${detailVo.goodsId}">
+                        <button type="submit" id="buyButton">抢购</button>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td>商品原价</td>
+                <td colspan="3" th:text="${detailVo.price}"></td>
+            </tr>
+            <tr>
+                <td>商品秒杀价</td>
+                <td colspan="3" th:text="${detailVo.seckillPrice}"></td>
+            </tr>
+            <tr>
+                <td>库存数量</td>
+                <td colspan="3"  th:text="${detailVo.stockNum}"></td>
+            </tr>
+            <tr>
+                <td>结束时间</td>
+                <td colspan="3"  th:text="${#dates.format(detailVo.endTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    $(function () {
+        countDown();
+    });
+    function countDown() {
+        var remainSeconds = $("#remainSeconds").val();
+        var timeout;
+        if (remainSeconds> 0) {
+            timeout = setTimeout(function () {
+                $("#countDown").text(remainSeconds-1);
+                $("#remainSeconds").val(remainSeconds - 1);
+                countDown();
+            }, 1000);
+        }else if(remainSeconds== 0) {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            $("#seckillTip").html("秒杀进行中");
+        }else {
+            $("#seckillTip").html("秒杀已经结束");
+        }
+    };
+</script>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhoudu.mapper.GoodsOrderMapper">
+   <insert id="addOrder" parameterType="com.zhoudu.domain.GoodsOrder"
+        useGeneratedKeys="true" keyProperty="id">
+       insert into goodsorder(order_id,user_id,goods_id,tel,address) values
+       (#{order_id},#{user_id},#{goods_id},#{tel},#{address})
+   </insert>
+</mapper>
+
+

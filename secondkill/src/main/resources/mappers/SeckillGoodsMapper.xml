@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhoudu.mapper.SeckillGoodsMapper">
+    <select id="selectSeckillGoods" resultType="com.zhoudu.domain.SeckillGoods">
+        select id,goods_id,seckill_price,stock_cnt,start_time,end_time from seckill_goods where goods_id=#{goodsId}
+    </select>
+    <update id="reduceStockCnt" parameterType="com.zhoudu.domain.SeckillGoods">
+        update seckill_goods set stock_cnt=#{stock_cnt} where goods_id=#{goods_id}
+    </update>
+</mapper>

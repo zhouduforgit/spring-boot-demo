@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhoudu.mapper.GoodsMapper">
+    <select id="selectAllGoods" resultType="com.zhoudu.domain.Goods">
+        select id,goods_id,name,type,price,img_path,stock_cnt from goods
+    </select>
+    <select id="selectGoodsById" resultType="com.zhoudu.domain.Goods">
+        select id,goods_id,name,type,price,img_path,stock_cnt from goods where goods_id=#{goodsId}
+    </select>
+
+</mapper>
