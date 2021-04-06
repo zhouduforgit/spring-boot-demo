@@ -11,4 +11,5 @@ public interface SeckillGoodsMapper {
     public SeckillGoods selectSeckillGoods(String goodsId);
     public void   reduceStockCnt(SeckillGoods seckillGoods);
 
+
 }

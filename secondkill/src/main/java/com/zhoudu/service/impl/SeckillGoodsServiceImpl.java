@@ -17,7 +17,6 @@ public class SeckillGoodsServiceImpl implements SeckillGoodsService {
         SeckillGoods seckillGoods= seckillGoodsMapper.selectSeckillGoods(goodsId);
         return seckillGoods;
     }
-
     public void reduceStockCnt(String goodsId){
         SeckillGoods seckillGoods= seckillGoodsMapper.selectSeckillGoods(goodsId);
         seckillGoods.setStock_cnt(seckillGoods.getStock_cnt()-1);

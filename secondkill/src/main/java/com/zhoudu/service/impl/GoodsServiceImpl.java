@@ -42,7 +42,6 @@ public class GoodsServiceImpl implements GoodsService {
         return goodsVos;
     }
 
-
     public GoodsDetailVo getGoodsDetail(String goodsId) {
         GoodsDetailVo goodsDetailVo=new GoodsDetailVo();
         SeckillGoods seckillGoods=seckillGoodsMapper.selectSeckillGoods(goodsId);

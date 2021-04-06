@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Date;
 import java.util.List;
 
-//@RestController
 @Controller
 public class GoodsController {
     @Autowired

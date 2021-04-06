@@ -1,6 +1,4 @@
 package com.zhoudu.vo;
-
-import com.sun.xml.internal.stream.StaxErrorReporter;
 import lombok.Data;
 
 import java.util.Date;
