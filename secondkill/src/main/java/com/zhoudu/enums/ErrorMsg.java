@@ -1,5 +1,6 @@
 package com.zhoudu.enums;
 
+
 import lombok.Data;
 import lombok.Getter;
 @Getter

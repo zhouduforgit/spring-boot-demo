@@ -3,6 +3,7 @@ package com.zhoudu.vo;
 import lombok.Data;
 import java.util.Date;
 @Data
+
 public class GoodsDetailVo {
     private String name;
     private String goodsId;

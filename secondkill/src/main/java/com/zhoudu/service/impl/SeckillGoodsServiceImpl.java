@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 public class SeckillGoodsServiceImpl implements SeckillGoodsService {
     @Autowired
     private SeckillGoodsMapper seckillGoodsMapper;
-
     public SeckillGoods getSeckillGoods(String goodsId) {
         SeckillGoods seckillGoods= seckillGoodsMapper.selectSeckillGoods(goodsId);
         return seckillGoods;

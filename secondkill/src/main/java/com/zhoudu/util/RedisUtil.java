@@ -21,7 +21,6 @@ public class RedisUtil {
     public void set(String key, Object value) {
         redisTemplate.opsForValue().set(key, value);
     }
-
     // 设置key 和 value  增加过期时间
     public void set(String key, Object value, long timeout) {
         redisTemplate.opsForValue().set(key, value, timeout, TimeUnit.SECONDS);
@@ -45,11 +44,9 @@ public class RedisUtil {
     public void decr(String key) {
         redisTemplate.opsForValue().decrement(key);
     }
-
     public Object execute(SessionCallback sessionCallback) {
         return redisTemplate.execute(sessionCallback);
     }
-
     public boolean hasKey(String key) {
         return redisTemplate.hasKey(key);
     }

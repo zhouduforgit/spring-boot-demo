@@ -1,7 +1,6 @@
 package com.zhoudu.vo;
 
 import lombok.Data;
-
 @Data
 public class GoodsVo {
     private long id;

@@ -58,5 +58,4 @@ public class GoodsServiceImpl implements GoodsService {
         return goodsDetailVo;
     }
 
-
 }

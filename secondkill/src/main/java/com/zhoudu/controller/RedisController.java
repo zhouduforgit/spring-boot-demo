@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RedisController {
-
     @Autowired
     private RedisService redisService;
 

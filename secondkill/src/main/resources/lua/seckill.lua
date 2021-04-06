@@ -9,6 +9,7 @@ if result1 and tonumber(result1) == 1 then
   return 2;
 end
 
+
 local num = redis.call("get",cntKey);
 if num and tonumber(num) <=0 then
   return 0;

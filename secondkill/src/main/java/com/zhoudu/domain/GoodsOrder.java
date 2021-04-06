@@ -1,6 +1,7 @@
 package com.zhoudu.domain;
 
 import lombok.Data;
+
 @Data
 public class GoodsOrder {
     private String id;
